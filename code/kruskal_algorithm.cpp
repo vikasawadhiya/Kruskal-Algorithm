@@ -98,6 +98,7 @@ namespace graphLibrary{
 			if ( unionFind.merge(u, v) ) {
 
 				miniumSpanningTree[u].emplace_back(v, w);
+				miniumSpanningTree[v].emplace_back(u, w);
 			}
 		}
 

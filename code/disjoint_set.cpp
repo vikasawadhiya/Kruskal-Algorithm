@@ -34,7 +34,7 @@ namespace graphLibrary {
 		parent(elementCount),
 		rank(elementCount) {
 
-		for (size_t i = 0; i < elementCount; ++i) {
+		for (size_t i = 1; i < elementCount; ++i) {
 
 			parent[i] = i;
 		}
@@ -75,12 +75,12 @@ namespace graphLibrary {
 
 		std::stack< size_t, vector<size_t> > elementStack;
 
-		while (element != parent[element]) {
-
+		do {
 			elementStack.push(element);
 
 			element = parent[element];
-		}
+
+		} while (element != parent[element]);
 
 		size_t rootElement = element;
 
